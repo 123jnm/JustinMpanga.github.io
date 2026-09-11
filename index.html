@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Justin Mpanga is a data analyst specializing in clinical research, healthcare analytics, and predictive modeling.">
+  <title>Justin Mpanga | Healthcare Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #17211b;
+      --muted: #68736d;
+      --paper: #f4f5ef;
+      --panel: #ffffff;
+      --line: #dbe1d9;
+      --green: #2d6a4f;
+      --lime: #c8f169;
+      --orange: #f28f3b;
+      --dark-panel: #20352a;
+      --mono: "DM Mono", monospace;
+      --sans: "Manrope", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(244, 245, 239, .9);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: -.04em; }
+    .brand-mark {
+      display: grid; place-items: center; width: 34px; height: 34px;
+      border-radius: 50%; background: var(--green); color: var(--lime);
+      font-family: var(--mono); font-size: 13px; letter-spacing: -.1em;
+    }
+    nav { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: 14px; font-weight: 700; }
+    nav a { transition: color .2s ease; }
+    nav a:hover { color: var(--green); }
+    .nav-cta { padding: 10px 16px; border: 1px solid var(--ink); color: var(--ink); border-radius: 2px; }
+
+    .hero { padding: 104px 0 92px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; width: 390px; height: 390px; right: -100px; top: 30px;
+      border: 1px solid rgba(45, 106, 79, .22); border-radius: 50%;
+      box-shadow: 0 0 0 36px rgba(45, 106, 79, .04), 0 0 0 72px rgba(45, 106, 79, .03);
+      pointer-events: none;
+    }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--green); font-family: var(--mono); text-transform: uppercase; font-size: 12px; letter-spacing: .08em; }
+    .eyebrow::before { content: ""; display: block; width: 28px; height: 2px; background: var(--orange); }
+    h1 { max-width: 860px; margin: 22px 0 24px; font-size: clamp(3.5rem, 8vw, 7.5rem); line-height: .95; letter-spacing: -.085em; font-weight: 800; }
+    h1 em { color: var(--green); font-style: normal; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 70px; align-items: end; }
+    .hero-copy { max-width: 550px; color: var(--muted); font-size: 17px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; gap: 10px; padding: 14px 19px; border-radius: 2px; font-weight: 800; font-size: 14px; transition: transform .2s ease, box-shadow .2s ease; }
+    .button:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(23, 33, 27, .12); }
+    .button-primary { background: var(--green); color: white; }
+    .button-secondary { border: 1px solid var(--line); background: var(--panel); }
+    .status-card { padding: 22px; border-left: 3px solid var(--orange); background: var(--panel); box-shadow: 0 12px 32px rgba(23, 33, 27, .06); }
+    .status-card strong { display: block; margin-bottom: 7px; font-size: 18px; letter-spacing: -.04em; }
+    .status-card p { margin: 0; color: var(--muted); font-size: 13px; }
+    .dot { display: inline-block; width: 8px; height: 8px; margin-right: 7px; border-radius: 50%; background: #59a96b; box-shadow: 0 0 0 4px #e1f2e3; }
+
+    .stats { padding: 23px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .stat { border-right: 1px solid var(--line); }
+    .stat:last-child { border: 0; }
+    .stat-number { display: block; font-size: 28px; font-weight: 800; letter-spacing: -.07em; }
+    .stat-label { color: var(--muted); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .03em; }
+
+    section { padding: 106px 0; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px; }
+    .section-kicker { color: var(--orange); font-family: var(--mono); font-size: 12px; }
+    h2 { margin: 8px 0 0; font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1; letter-spacing: -.075em; }
+    .section-note { max-width: 330px; margin: 0; color: var(--muted); font-size: 14px; }
+
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { min-height: 360px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; background: var(--panel); border: 1px solid var(--line); transition: transform .25s ease, border-color .25s ease; }
+    .project:hover { transform: translateY(-6px); border-color: var(--green); }
+    .project:nth-child(2) { background: var(--dark-panel); color: white; }
+    .project:nth-child(2) .project-type, .project:nth-child(2) .project-description { color: #b8cbbf; }
+    .project:nth-child(3) { background: var(--lime); }
+    .project:nth-child(4) { background: #f8e5d2; }
+    .project-type { color: var(--green); font-family: var(--mono); font-size: 11px; text-transform: uppercase; }
+    .project-title { max-width: 370px; margin: 60px 0 12px; font-size: 29px; line-height: 1.05; letter-spacing: -.06em; }
+    .project-description { max-width: 400px; margin: 0; color: var(--muted); font-size: 14px; }
+    .project-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 35px; font-family: var(--mono); font-size: 11px; }
+    .project-link { font-size: 22px; }
+
+    .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; align-items: start; }
+    .about-copy { color: var(--muted); font-size: 17px; }
+    .about-copy p { margin-top: 0; }
+    .about-copy strong { color: var(--ink); }
+    .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .skill-group { padding-top: 18px; border-top: 1px solid var(--ink); }
+    .skill-group h3 { margin: 0 0 12px; font-size: 15px; }
+    .skill-group p { margin: 0; color: var(--muted); font-family: var(--mono); font-size: 12px; line-height: 1.9; }
+
+    .contact { padding: 70px 0; background: var(--green); color: white; }
+    .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .contact h2 { max-width: 600px; }
+    .contact p { max-width: 430px; margin: 18px 0 0; color: #d0e0d5; }
+    .contact .button { flex-shrink: 0; background: var(--lime); color: var(--ink); }
+
+    footer { padding: 25px 0; background: var(--dark-panel); color: #b8cbbf; font-family: var(--mono); font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a:hover { color: var(--lime); }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 580px); }
+      header { padding: 16px 0; }
+      nav a:not(.nav-cta) { display: none; }
+      .hero { padding: 70px 0 65px; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      h1 { font-size: clamp(3.4rem, 17vw, 6rem); }
+      .hero::before { right: -220px; top: 120px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 22px 10px; }
+      .stat:nth-child(2) { border: 0; }
+      section { padding: 75px 0; }
+      .section-heading, .contact-inner { display: block; }
+      .section-note { margin-top: 20px; }
+      .projects, .skills { grid-template-columns: 1fr; }
+      .project { min-height: 320px; }
+      .contact .button { margin-top: 28px; }
+      .footer-inner { display: block; }
+      .footer-links { margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Justin Mpanga home"><span class="brand-mark">JM</span> Justin Mpanga</a>
+      <nav aria-label="Primary navigation">
+        <a href="#work">Selected work</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="mailto:hello@mpanga.org">Let's talk ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow reveal">Data analyst · Healthcare + research</div>
+        <h1 class="reveal">Turning complex data into <em>clear decisions.</em></h1>
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <p>I build thoughtful data workflows, predictive models, and visual stories that help biomedical teams move from questions to measurable outcomes.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#work">Explore my work <span>↓</span></a>
+              <a class="button button-secondary" href="mailto:hello@mpanga.org">Get in touch <span>↗</span></a>
+            </div>
+          </div>
+          <aside class="status-card reveal">
+            <strong><span class="dot"></span>Open to meaningful work</strong>
+            <p>Available for analytics, research, and machine learning collaborations.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat reveal"><span class="stat-number">05+</span><span class="stat-label">Years in analytics</span></div>
+        <div class="stat reveal"><span class="stat-number">03</span><span class="stat-label">Core disciplines</span></div>
+        <div class="stat reveal"><span class="stat-number">360°</span><span class="stat-label">Workflow ownership</span></div>
+        <div class="stat reveal"><span class="stat-number">1</span><span class="stat-label">Curious mind</span></div>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div><div class="section-kicker">01 / Selected work</div><h2>Analysis with<br>an outcome.</h2></div>
+          <p class="section-note">A few ways I have used data to make research more precise, visible, and actionable.</p>
+        </div>
+        <div class="projects">
+          <article class="project reveal">
+            <div><div class="project-type">Clinical research · Machine learning</div><h3 class="project-title">Predicting patient outcomes earlier</h3><p class="project-description">An interpretable modeling workflow that turns longitudinal clinical data into earlier signals for care teams.</p></div>
+            <div class="project-footer"><span>Python · scikit-learn · SHAP</span><span class="project-link">↗</span></div>
+          </article>
+          <article class="project reveal">
+            <div><div class="project-type">Biomedical data · Deep learning</div><h3 class="project-title">Seeing patterns in complex biology</h3><p class="project-description">Feature engineering and deep learning experiments designed to surface meaningful patterns in biomedical datasets.</p></div>
+            <div class="project-footer"><span>PyTorch · Pandas · Jupyter</span><span class="project-link">↗</span></div>
+          </article>
+          <article class="project reveal">
+            <div><div class="project-type">Healthcare analytics · ETL</div><h3 class="project-title">Making the pipeline trustworthy</h3><p class="project-description">A robust data foundation that moved messy source data into a reliable, analysis-ready model for decision makers.</p></div>
+            <div class="project-footer"><span>SQL · dbt · Data quality</span><span class="project-link">↗</span></div>
+          </article>
+          <article class="project reveal">
+            <div><div class="project-type">Data storytelling · Visualization</div><h3 class="project-title">Dashboards people actually use</h3><p class="project-description">Focused visual systems that make trends, risks, and research progress legible at a glance.</p></div>
+            <div class="project-footer"><span>Tableau · Plotly · Power BI</span><span class="project-link">↗</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="reveal"><div class="section-kicker">02 / The approach</div><h2>Curious by nature.<br>Rigorous by habit.</h2></div>
+        <div class="about-copy reveal">
+          <p>I’m Justin, a data analyst specializing in <strong>clinical research and healthcare analytics</strong>. I enjoy finding the useful signal inside complicated datasets, then making that signal understandable to the people who need it.</p>
+          <p>My work spans the full journey from ETL and feature engineering to predictive modeling and visualization. The best analysis, to me, is technically sound, easy to interrogate, and connected to a decision.</p>
+          <div class="skills">
+            <div class="skill-group"><h3>Build</h3><p>Python / SQL / Pandas<br>scikit-learn / PyTorch<br>ETL / Feature engineering</p></div>
+            <div class="skill-group"><h3>Communicate</h3><p>Tableau / Power BI<br>Plotly / Matplotlib<br>Clear, useful storytelling</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="wrap contact-inner">
+        <div><div class="section-kicker">03 / Start a conversation</div><h2>Have a meaningful data problem?</h2><p>Tell me what you are working on. I’m always interested in thoughtful questions and the people asking them.</p></div>
+        <a class="button" href="mailto:hello@mpanga.org">hello@mpanga.org <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner"><span>© 2026 Justin Mpanga</span><div class="footer-links"><a href="mailto:hello@mpanga.org">Email</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></div></div>
+  </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
