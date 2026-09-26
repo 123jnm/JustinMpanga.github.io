@@ -1,0 +1,26 @@
+"Year","Topic","Indicator","Unit","Estimate","SE Estimate","Lower_Limit","Upper_Limit","Estimate Footnote","Data Source","Population","Age","Race","Sex","Education","Other Stratification","age_priority","annual_change","percent_change"
+2000,"Burden/Magnitude","Diagnosed Diabetes","Percentage",4.5,0.1,4.3,4.7,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,NA,NA
+2001,"Burden/Magnitude","Diagnosed Diabetes","Percentage",4.8,0.1,4.6,5,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.3,6.66666666666666
+2002,"Burden/Magnitude","Diagnosed Diabetes","Percentage",4.9,0.1,4.7,5.1,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.100000000000001,2.08333333333334
+2003,"Burden/Magnitude","Diagnosed Diabetes","Percentage",4.9,0.1,4.7,5.1,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0,0
+2004,"Burden/Magnitude","Diagnosed Diabetes","Percentage",5.2,0.1,5,5.4,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.3,6.12244897959183
+2005,"Burden/Magnitude","Diagnosed Diabetes","Percentage",5.5,0.1,5.2,5.7,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.3,5.76923076923077
+2006,"Burden/Magnitude","Diagnosed Diabetes","Percentage",5.7,0.2,5.4,6,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.2,3.63636363636364
+2007,"Burden/Magnitude","Diagnosed Diabetes","Percentage",5.6,0.2,5.3,5.9,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,-0.100000000000001,-1.75438596491229
+2008,"Burden/Magnitude","Diagnosed Diabetes","Percentage",5.9,0.2,5.6,6.3,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.300000000000001,5.35714285714287
+2009,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.4,0.2,6.1,6.8,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.5,8.47457627118644
+2010,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.5,0.1,6.2,6.8,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.0999999999999996,1.56249999999999
+2011,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.3,0.1,6,6.5,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,-0.2,-3.07692307692308
+2012,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.3,0.1,6,6.6,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0,0
+2013,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.5,0.1,6.2,6.7,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.2,3.17460317460318
+2014,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.2,0.1,6,6.5,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,-0.3,-4.61538461538461
+2015,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.5,0.1,6.2,6.8,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.3,4.83870967741935
+2016,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.4,0.1,6.1,6.7,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,-0.0999999999999996,-1.53846153846153
+2017,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.3,0.1,6,6.6,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,-0.100000000000001,-1.56250000000001
+2018,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.8,0.2,6.5,7.2,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.5,7.93650793650794
+2019,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.3,0.1,6,6.5,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,-0.5,-7.35294117647059
+2020,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.2,0.1,5.9,6.5,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,-0.0999999999999996,-1.58730158730158
+2021,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.4,0.1,6.2,6.7,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.2,3.22580645161291
+2022,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.4,0.1,6.1,6.6,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0,0
+2023,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.5,0.1,6.3,6.8,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.0999999999999996,1.56249999999999
+2024,"Burden/Magnitude","Diagnosed Diabetes","Percentage",6.6,0.1,6.4,6.9,"","National Health Interview Survey (NHIS)","All Ages","Age-Adjusted","All","All","All","",0,0.0999999999999996,1.53846153846153
