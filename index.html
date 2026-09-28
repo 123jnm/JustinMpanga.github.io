@@ -46,14 +46,9 @@
     }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: -.04em; }
-    .brand-mark {
-      display: grid; place-items: center; width: 34px; height: 34px;
-      border-radius: 50%; background: var(--green); color: var(--lime);
-      font-family: var(--mono); font-size: 13px; letter-spacing: -.1em;
-    }
-    .profile-photo {
-      display: block; width: 144px; height: 144px; margin-bottom: 24px;
-      border: 4px solid var(--lime); border-radius: 50%; object-fit: cover;
+    .brand-photo {
+      width: 42px; height: 42px; flex: 0 0 auto;
+      border: 2px solid var(--lime); border-radius: 50%; object-fit: cover;
     }
     nav { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: 14px; font-weight: 700; }
     nav a { transition: color .2s ease; }
@@ -134,6 +129,10 @@
     @media (max-width: 760px) {
       .wrap { width: min(100% - 32px, 580px); }
       header { padding: 16px 0; }
+      .nav { gap: 12px; }
+      .brand { gap: 8px; font-size: 14px; }
+      .brand-photo { width: 36px; height: 36px; }
+      .nav-cta { padding: 8px 10px; white-space: nowrap; }
       nav a:not(.nav-cta) { display: none; }
       .hero { padding: 70px 0 65px; }
       .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 35px; }
@@ -156,7 +155,7 @@
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="Justin Mpanga home"><span class="brand-mark">JM</span> Justin Mpanga</a>
+      <a class="brand" href="#top" aria-label="Justin Mpanga home"><img class="brand-photo" src="Justin%20Pic.jpeg" alt=""> Justin Mpanga</a>
       <nav aria-label="Primary navigation">
         <a href="#work">Selected work</a>
         <a href="#about">About</a>
@@ -203,19 +202,19 @@
         </div>
         <div class="projects">
           <article class="project reveal">
-            <div><div class="project-type">Public health · Machine learning</div><h3 class="project-title">Reading diabetes burden over time</h3><p class="project-description">I clean CDC surveillance estimates, compare demographic strata, and test how well models predict aggregate indicators without mistaking them for patient-level risk.</p></div>
-            <div class="project-footer"><span>Python · scikit-learn · SHAP</span><a class="project-link" href="https://github.com/123jnm/JustinMpanga.github.io/blob/main/notebooks/diabetes_burden_models.ipynb" target="_blank" rel="noopener noreferrer" aria-label="Open diabetes burden project on GitHub">↗</a></div>
+            <div><div class="project-type">Public health · Statistical modeling</div><h3 class="project-title">CDC Diabetes Burden: Trends &amp; Model Benchmark</h3><p class="project-description">In this CDC snapshot, the age-adjusted estimate shifts from 6.5% in 2015 to 6.6% in 2024. The linked notebook includes subgroup intervals and a 2020–24 model holdout.</p></div>
+            <div class="project-footer"><span>Python · pandas · scikit-learn</span><a class="project-link" href="https://github.com/123jnm/JustinMpanga.github.io/blob/main/notebooks/diabetes_burden_models.ipynb" target="_blank" rel="noopener noreferrer" aria-label="Open CDC diabetes analysis and results on GitHub">↗</a></div>
           </article>
           <article class="project reveal">
-            <div><div class="project-type">Population estimates · Model evaluation</div><h3 class="project-title">Testing a model against time</h3><p class="project-description">A later-year holdout compares a random forest with a neural network and puts their errors in context: the target is an aggregate surveillance estimate, not an individual outcome.</p></div>
-            <div class="project-footer"><span>Python · MLP · Jupyter</span><a class="project-link" href="https://github.com/123jnm/JustinMpanga.github.io/blob/main/notebooks/diabetes_burden_models.ipynb" target="_blank" rel="noopener noreferrer" aria-label="Open model evaluation project on GitHub">↗</a></div>
+            <div><div class="project-type">Healthcare operations · Reimbursement</div><h3 class="project-title">Uninsured-Care Reimbursement in DuckDB SQL</h3><p class="project-description">Texas leads this snapshot at $3.16B; California follows at $2.48B, mostly from testing. The linked notebook includes the audit, state mix, and provider rankings.</p></div>
+            <div class="project-footer"><span>Python · DuckDB · SQL</span><a class="project-link" href="https://github.com/123jnm/JustinMpanga.github.io/blob/main/notebooks/claims_reimbursement_analysis_SQL.ipynb" target="_blank" rel="noopener noreferrer" aria-label="Open reimbursement SQL analysis and results on GitHub">↗</a></div>
           </article>
           <article class="project reveal">
-            <div><div class="project-type">Healthcare analytics · ETL</div><h3 class="project-title">From CDC source to decision-ready data</h3><p class="project-description">The workflow documents extraction, schema checks, cleaning, Lyme-period consolidation, metric design, and lineage across public-health datasets.</p></div>
-            <div class="project-footer"><span>R · DuckDB · Data lineage</span><a class="project-link" href="https://github.com/123jnm/JustinMpanga.github.io/blob/main/R/download_cdc_datasets.R" target="_blank" rel="noopener noreferrer" aria-label="Open CDC data pipeline script on GitHub">↗</a></div>
+            <div><div class="project-type">Infectious disease · Data engineering</div><h3 class="project-title">Lyme Surveillance: Multi-Era ETL</h3><p class="project-description">The R pipeline combines 893,519 CDC records across three surveillance eras, labels each row by period, and checks schemas before appending.</p></div>
+            <div class="project-footer"><span>R · CDC Socrata · ETL</span><a class="project-link" href="https://github.com/123jnm/JustinMpanga.github.io/blob/main/R/download_cdc_datasets.R" target="_blank" rel="noopener noreferrer" aria-label="Open CDC Lyme ETL script on GitHub">↗</a></div>
           </article>
           <article class="project reveal">
-            <div><div class="project-type">Data storytelling · Visualization</div><h3 class="project-title">Turning evidence into a decision view</h3><p class="project-description">Claims and diabetes measures stay at their proper grains, with uncertainty visible in the comparisons built for decision-makers.</p></div>
+            <div><div class="project-type">Data storytelling · Visualization</div><h3 class="project-title">Uninsured Care Reimbursement and Diabetes Burden</h3><p class="project-description">The dashboard specification keeps provider payments separate from population estimates and calls for visible uncertainty, source dates, and measure definitions.</p></div>
             <div class="project-footer"><span>Tableau · Power BI · DAX</span><a class="project-link" href="https://github.com/123jnm/JustinMpanga.github.io/blob/main/dashboard_specs/tableau_powerbi_healthcare_dashboard.md" target="_blank" rel="noopener noreferrer" aria-label="Open dashboard project on GitHub">↗</a></div>
           </article>
         </div>
@@ -224,7 +223,7 @@
 
     <section id="about">
       <div class="wrap about-grid">
-        <div class="reveal"><img class="profile-photo" src="Justin%20Pic.jpeg" alt="Portrait of Justin Mpanga" width="144" height="144" loading="lazy"><div class="section-kicker">02 / The approach</div><h2>Curious by nature.<br>Rigorous by habit.</h2></div>
+        <div class="reveal"><div class="section-kicker">02 / The approach</div><h2>Curious by nature.<br>Rigorous by habit.</h2></div>
         <div class="about-copy reveal">
           <p>I’m Justin, a data analyst specializing in <strong>clinical research and healthcare analytics</strong>. I enjoy finding the useful signal inside complicated datasets, then making that signal understandable to the people who need it.</p>
           <p>My work spans the full journey from ETL and feature engineering to predictive modeling and visualization. The best analysis, to me, is technically sound, easy to interrogate, and connected to a decision.</p>
@@ -245,7 +244,7 @@
   </main>
 
   <footer>
-    <div class="wrap footer-inner"><span>© 2026 Justin Mpanga</span><div class="footer-links"><a href="mailto:Justin.M@mpanga.org">Email</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/123jnm" target="_blank" rel="noreferrer">GitHub</a></div></div>
+    <div class="wrap footer-inner"><span>© 2026 Justin Mpanga</span><div class="footer-links"><a href="mailto:Justin.M@mpanga.org">Email</a><a href="https://www.linkedin.com/in/justin-m-824804295" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/123jnm" target="_blank" rel="noreferrer">GitHub</a></div></div>
   </footer>
   <script>
     const observer = new IntersectionObserver((entries) => {
