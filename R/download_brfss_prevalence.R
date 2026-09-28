@@ -1,6 +1,8 @@
+# This CDC export contains aggregate prevalence estimates, not respondent-level data.
 dataset_url <- "https://data.cdc.gov/api/views/dttw-5yxu/rows.csv?accessType=DOWNLOAD"
 output_path <- file.path("data", "brfss_prevalence.csv")
 
+# Keep the large export local and out of tracked files.
 dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
 
 download.file(

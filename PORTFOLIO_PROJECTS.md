@@ -1,42 +1,44 @@
 # Healthcare analytics portfolio projects
 
-These projects are designed as a connected portfolio for healthcare data analyst roles. Each one answers a different kind of business or public-health question and makes the limits of the data visible.
+I built these projects around practical public-health and healthcare operations questions. Each one follows a reproducible path from source data to findings, with the limits of those findings made clear.
+
+**Shared workflow:** The [ETL procedures and lineage guide](ETL_PIPELINES.md) follows each dataset through acquisition, staging, cleaning, validation, transformation, and publication.
 
 ## 1. Diabetes burden: statistics and predictive modeling
 
-**Artifacts:** [Python notebook](notebooks/diabetes_burden_models.ipynb), [R notebook](notebooks/diabetes_trend_analysis_R.ipynb), [R script](R/diabetes_trend_analysis.R)
+**Artifacts:** [Python notebook](notebooks/diabetes_burden_models.ipynb), [R analysis script](R/diabetes_trend_analysis.R), [CDC ETL script](R/download_cdc_datasets.R)
 
-Use the CDC diabetes surveillance extract to produce trend estimates, compare demographic strata, calculate recent change, and benchmark a random forest against a multilayer perceptron. The notebook demonstrates chronological holdout design, one-hot encoding, MAE/RMSE/R2 evaluation, and interpretation of aggregated surveillance data.
+I start with the CDC USDSS extract, check its year, estimate, and confidence-limit fields, then focus on diagnosed-diabetes percentages for comparable national strata. Age-adjusted values anchor the trend; annual changes, subgroup tables, and a confidence-band chart make the variation visible. In this snapshot, the estimate moves from 6.5% in 2015 to 6.6% in 2024, with noticeable movement in between. I also compare a random forest and an MLP using a chronological holdout. The forest's MAE is 1.055 and RMSE is 1.725, but those scores describe estimates for population strata, not individual patients.
 
 **Skills:** Python, pandas, scikit-learn, neural networks, statistical reasoning, visualization, R, ggplot2.
 
 ## 2. Uninsured-care reimbursement operations
 
-**Artifacts:** [SQL notebook](notebooks/claims_reimbursement_analysis_SQL.ipynb), [SQL analysis](sql/claims_reimbursement_analysis.sql)
+**Artifacts:** [SQL notebook](notebooks/claims_reimbursement_analysis_SQL.ipynb), [SQL analysis](sql/claims_reimbursement_analysis.sql), [CDC ETL script](R/download_cdc_datasets.R)
 
-Clean dollar fields, create a state-level reimbursement mart, rank provider concentration, calculate service-category mix, and expose zero-value rows for data-quality review. This is a strong SQL/operations project because it connects window functions and reusable views to concrete program questions.
+The claims workflow loads the CDC/HRSA provider extract into DuckDB at provider/city/state grain. After trimming text fields and typing payment amounts, I check for missing, negative, and all-zero values before building cleaned and state-level views. Window functions show service mix and provider concentration. In this snapshot, Texas leads with about $3.16 billion, followed by California at $2.48 billion; the largest provider/state pair is Curative Labs Inc. in DC at about $646 million. These rankings show where reported payments concentrate, not patient volume or why one state received more. I reconcile row counts and payment totals before publishing.
 
 **Skills:** SQL, ETL, data quality, window functions, KPI design, healthcare operations.
 
 ## 3. Tableau and Power BI healthcare dashboard
 
-**Artifact:** [Dashboard specification](dashboard_specs/tableau_powerbi_healthcare_dashboard.md)
+**Artifacts:** [Dashboard specification](dashboard_specs/tableau_powerbi_healthcare_dashboard.md), [ETL and lineage guide](ETL_PIPELINES.md)
 
-Build a two-page dashboard combining reimbursement operations with diabetes burden trends. The specification includes grain-aware modeling, DAX, Tableau calculations, Power Query rules, filters, tooltips, and interpretation guardrails.
+Claims and diabetes stay in separate fact tables because their row grains and measures differ. The [dashboard specification](dashboard_specs/tableau_powerbi_healthcare_dashboard.md) shows how I connect compatible dimensions, expose source freshness, and turn the analyses into a decision-support view with DAX, Tableau calculations, filters, and tooltips.
 
 **Skills:** Tableau, Power BI, DAX, Power Query, dimensional modeling, data storytelling.
 
 ## 4. Existing BRFSS metabolic-risk modeling track
 
-The [CDC BRFSS prevalence dataset](https://data.cdc.gov/Behavioral-Risk-Factors/Behavioral-Risk-Factor-Surveillance-System-BRFSS-P/dttw-5yxu) is an aggregate, stratified prevalence export, not respondent-level data. Download it locally with [the R download script](R/download_brfss_prevalence.R) when needed; do not commit the multi-million-row export. Keep any future respondent-level modeling separate: BRFSS does not contain all laboratory measures required for a clinical metabolic-syndrome diagnosis. Present any proxy as exploratory, account for survey design when analyzing respondent-level data, and evaluate subgroup performance before making health claims.
+I keep the [CDC BRFSS prevalence dataset](https://data.cdc.gov/Behavioral-Risk-Factors/Behavioral-Risk-Factor-Surveillance-System-BRFSS-P/dttw-5yxu) as a separate exploratory track. It contains aggregate prevalence estimates, not respondent-level records, so the multi-million-row export stays local through [the R download script](R/download_brfss_prevalence.R). It also lacks laboratory measures required to diagnose metabolic syndrome. Any future respondent-level BRFSS analysis would need to account for survey design and check subgroup performance before making health claims.
 
 ## Suggested portfolio presentation
 
-For each project, publish four things:
+For each project, I aim to include four things:
 
-1. A short problem statement tied to a decision.
-2. A reproducible code artifact with comments and a data dictionary.
-3. One polished visual or dashboard screenshot.
+1. A clear question tied to a decision.
+2. Reproducible code, useful comments, and a data dictionary.
+3. A polished visual or dashboard that shows the evidence.
 4. A limitations section that explains what the data cannot support.
 
-This combination shows technical range without presenting exploratory models as clinical tools.
+Together, these pieces show how I move from raw data to a defensible story without presenting exploratory models as clinical tools.
